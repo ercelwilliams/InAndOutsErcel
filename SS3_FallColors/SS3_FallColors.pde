@@ -100,7 +100,7 @@ fill (r,g,b,a);
 triangle(730, tri, 832, 120, 944, tri);
 
 //draws ellipse across and down the screen emulating apples on the tree
-//unable to get prevent from going off screen
+//unable to prevent from going off screen
 for (int d = 135; d < width; d = d+ 50) {
   for (int y =400 ; y < height; y = y+ 80) {
      fill(222, 16, 26);
