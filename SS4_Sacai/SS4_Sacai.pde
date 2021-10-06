@@ -1,3 +1,6 @@
+//Click images using mouse to have the image change.
+//text moves on timed event
+
 PFont font;
 PImage sacai;
 PImage sacaib;
