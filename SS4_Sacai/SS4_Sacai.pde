@@ -1,11 +1,11 @@
 //Click images using mouse to have the image change.
-//text moves on timed event
+//text moves on timed event. Canvas goes blank after time event. 
 
 PFont font;
 PImage sacai;
 PImage sacaib;
-int time1;
-int time2;
+int time1 =10000;
+int time2 =1000;
 int x =0;
 
 
@@ -23,7 +23,6 @@ void setup() {
 void draw() {
 int currentTime = millis();
   background(255);
- image (sacai, width/2, height/2, sacai.width/3,sacai.height/3);
 textFont(font);
 fill(0);
 text("Nike x Sacai x Fragment Waffle", x, 100);
@@ -35,8 +34,14 @@ if (mousePressed){
   image (sacai, width/2, height/2, sacai.width/3,sacai.height/3);
   }
 
-if (currentTime>time1){
+
+if (currentTime>time2){
   x+=1;
 }
+if (currentTime>time1){
+  background(255);
+}
+
+
 
 }
