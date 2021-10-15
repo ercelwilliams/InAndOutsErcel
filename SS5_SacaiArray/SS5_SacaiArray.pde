@@ -19,15 +19,19 @@ void setup() {
 void draw() {
   background(0);
   imageMode(CENTER);
-  image(sacai[whichSacai], width/2, height/2, width/3, height/3);
+  image(sacai[whichSacai], width/2, height/2, width/2, height/3);
   fill(0);
   ellipse(mouseX,mouseY, 20,20);
   
   if (mouseX>350){
     fill(255);
-  text("Nike x Sacai x Fragment Waffle", 300, 100);
+  text("Nike x Sacai", 300,200);
 
   }
+  
+  Border(30,30,125,134,255);
+  Border(670,30,125,134,255);
+  frame(width/4.5,height/4);
 }
 
 void mousePressed() {
@@ -38,4 +42,25 @@ void keyPressed(){
   
   println(whichSacai);
 }
- 
+
+void Border(int x,int y, float r,float g, float b){
+  r= random (0, 255);
+  g= random (0, 255);
+  b= random (0, 255);
+  
+  
+  while (y<width) { 
+    noStroke();
+    fill(r,g,b);
+    ellipse (x, y, 50, 50);
+    y= y+80;
+  }  
+}
+
+void frame(float x, float y){
+  strokeWeight(16);
+  noFill();
+  stroke(255);
+rect(x,y,400,300);
+
+}
