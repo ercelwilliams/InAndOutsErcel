@@ -1,18 +1,26 @@
 String state= "pregame";
+
 PImage[] sacai= new PImage [6];
-int whichSacai=0;
+int whichSacai = 0;
+int posSacai = 0;
+int posbio = 0;
+String[] bio={"Nike X Sacai X Fragment", "Nike X Sacai OG", "Nike X Sacai X Clot"};
+
+
+
+
 
 void setup(){
   size (700,700);
   textAlign(CENTER);
   textSize(24);
   
-  sacai[0]= loadImage ("sacai.jpg");
-  sacai[1]= loadImage ("sacaiB.jpg");
+  sacai[0]= loadImage ("sacaiF.jpg");
+  sacai[1]= loadImage ("sacaiE.jpg");
   sacai[2]= loadImage ("sacaiC.jpg");
   sacai[3]= loadImage ("sacaiD.jpg");
-  sacai[4]= loadImage ("sacaiE.jpg");
-  sacai[5]= loadImage ("sacaiF.jpg");
+  sacai[4]= loadImage ("sacai.jpg");
+  sacai[5]= loadImage ("sacaiB.jpg");
 
 }
 
@@ -50,20 +58,34 @@ void game(){
   Border(30,30,125,134,255);
   Border(670,30,125,134,255);
   
+  fill(255);
+  text("This is " + bio[posbio],300,100);
   
-  image(sacai[whichSacai], width/4, height/4,width/2,height/2);
+  
+  image(sacai[whichSacai], width/8, height/3.5,width/1.3,height/1.75);
  
   if (mouseX>600){
     state ="gameover";
   }
 }
+
+
+
+
 void keyPressed(){
  if (state=="game"){
-   if(key=='1'){
-    whichSacai=int(random(sacai.length));
-    
+  // if(key=='1'){
+    // whichSacai++;
+    //} 
+    if (whichSacai ==sacai.length-1){
+      whichSacai=0;
     }
-  
+    else{
+      whichSacai++;
+    }
+    whichSacai=int(random(0,sacai.length));
+   
+    
   }
 }
   
