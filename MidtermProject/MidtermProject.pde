@@ -1,6 +1,7 @@
 String state= "pregame";
 PImage[] sacai= new PImage [6];
 PImage madpic;
+int whichSacai=0;
 
 void setup(){
   size (700,700);
@@ -41,10 +42,10 @@ void game(){
   background(202,220,202);
   Border(30,30,125,134,255);
   Border(670,30,125,134,255);
-  if (mouseX>600){
-    state ="gameover";
-  }
-  
+ // if (mouseX>600){
+   // state ="gameover";
+  //}
+  image(sacai[whichSacai], width/8, height/3.5,width/1.3,height/1.75);
   
 }  
 
@@ -71,6 +72,15 @@ if(state=="pregame"){
   state="mad";
   }
 }
+if(state=="game"){
+  if (key=='1'){
+  whichSacai=int(random(sacai.length));
+  }
+  if (key=='2'){
+  state="gameover";
+  }
+}
+
 }
 
 void Border(int x,int y, float r,float g, float b){
